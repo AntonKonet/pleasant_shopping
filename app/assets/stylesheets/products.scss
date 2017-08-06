@@ -1,0 +1,33 @@
+.products_grid {
+
+  .product_cell {
+    display: inline-block;
+    max-width: 200px;
+    min-width: 120px;
+    width: 20%;
+    margin: 10px;
+    border: 1px;
+    padding: 5px;
+    border-style: solid;
+
+    .name {
+      font-size: 16px;
+      font-weight: bold;
+      height: 60px;
+      text-align: center;
+    }
+
+    .brand, .model {
+      margin-left: 5px;
+      font-size: 12px;
+    }
+
+    .price {
+      float: right;
+      margin: 10px 5px 5px 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #2ECC40;
+    }
+  }
+}

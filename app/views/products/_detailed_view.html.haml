@@ -1,0 +1,9 @@
+#product_information.detailed_view
+  = form_for @product, add_to_cart do |f|
+    = f.hidden_field :id
+    = f.name
+    = f.model
+    = f.brand
+    = f.price
+    = f.desc
+    = f.submit

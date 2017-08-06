@@ -1,0 +1,4 @@
+%h2 Choose JSON file with products data
+= form_tag upload_products_admin_products_path, method: :put do
+  = file_field_tag 'file', class: 'upload', accept: 'text/json'
+  = submit_tag 'Upload'

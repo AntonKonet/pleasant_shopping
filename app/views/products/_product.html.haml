@@ -1,0 +1,9 @@
+.product_cell
+  .name
+    = link_to product.name, product_path(product)
+  .brand
+    = product.brand
+  .model
+    = product.model
+  .price
+    = "$#{product.price}"

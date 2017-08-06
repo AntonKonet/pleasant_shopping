@@ -1,0 +1,17 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+    %title PleasantShopping
+  %body
+    .header
+      .right_panel
+        .cart
+          = link_to t('defaults.cart'), '#'
+        .button
+          = link_to t('defaults.sign_up'), '#'
+        .button
+          = link_to t('defaults.log_out'), '#'
+    .container
+      = yield
