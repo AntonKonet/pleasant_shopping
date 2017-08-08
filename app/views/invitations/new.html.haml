@@ -1,0 +1,11 @@
+= form_for @invitation, url: invitations_path, method: :post do |f|
+  .field_box
+    .label= f.label :first_name
+    .value= f.text_field :first_name
+  .field_box
+    .label= f.label :last_name
+    .value= f.text_field :last_name
+  .field_box
+    .label= f.label :email
+    .value= f.text_field :email
+  = f.submit t('defaults.submit')

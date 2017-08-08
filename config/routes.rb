@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
   match '/', to: 'products#index', via: :get
+  match 'sign_up/:key', :to => 'users#new', :as=>:sign_up, :via => [:get]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    member do
+      post :add_to_cart
+    end
+  end
+  resources :invitations, only: [:new, :create]
+  resources :users, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

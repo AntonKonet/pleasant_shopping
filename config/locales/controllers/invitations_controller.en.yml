@@ -1,0 +1,5 @@
+en:
+  invitations_controller:
+    email_has_already_been_taken: Email has already been taken
+    request_has_been_accepted: Request has been accepted
+    fill_all_the_fields: Please fill all the fields

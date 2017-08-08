@@ -1,6 +1,6 @@
 .product_cell
   .name
-    = link_to product.name, product_path(product)
+    = link_to product.name, product_path(product), remote: true
   .brand
     = product.brand
   .model
