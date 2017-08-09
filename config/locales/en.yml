@@ -1,6 +1,7 @@
 en:
   defaults:
-    cart: My Cart
+    cart: "My Cart(%{count})"
     sign_up: Sign Up
+    log_in: Log In
     log_out: Log Out
     submit: Submit

@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
 
   match '/', to: 'products#index', via: :get
+  match '/sessions/destroy', to: 'sessions#destroy', as: :logout, via: [:delete]
+  match '/sessions/create', to: 'sessions#create', as: :signin, via: [:post]
+  match '/sessions/new', to: 'sessions#new', as: :login, via: [:get]
   match 'sign_up/:key', :to => 'users#new', :as=>:sign_up, :via => [:get]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :products, only: [:index, :show] do
     member do
       post :add_to_cart
+    end
+
+    collection do
+      get :cart
     end
   end
   resources :invitations, only: [:new, :create]

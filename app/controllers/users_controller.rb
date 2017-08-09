@@ -10,7 +10,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(params[:user])
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    @user = User.new(user_params)
+    invitation = Invitation.where(email: @user.email).first
+    invitation.user = @user
+    if @user.valid?
+      @user.save
+      redirect_to login_path
+    else
+      flash[:error] = I18n.t('.registration_not_finished')
+      render :new
+    end
   end
 
 end

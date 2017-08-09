@@ -12,7 +12,8 @@ class InvitationsController < ApplicationController
     end
     data = params.require(:invitation).permit(:first_name, :last_name, :email)
     @invitation = Invitation.new(data)
-    if @invitation.save!
+    if @invitation.valid?
+      @invitation.save
       flash[:notice] = I18n.t('.request_has_been_accepted')
       redirect_to '/'
     else

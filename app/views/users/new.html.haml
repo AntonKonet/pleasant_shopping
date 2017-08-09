@@ -1,0 +1,18 @@
+.user_form
+  = form_for @user, url: users_path, method: :post do |f|
+    .field_box
+      .label= f.label :first_name
+      .value= f.text_field :first_name
+    .field_box
+      .label= f.label :last_name
+      .value= f.text_field :last_name
+    .field_box
+      .label= f.label :email
+      .value= f.text_field :email
+    .field_box
+      .label= f.label :password
+      .value= f.password_field :password, autocomplete: 'off', required: true
+    .field_box
+      .label= f.label :password_confirmation
+      .value= f.password_field :password_confirmation, autocomplete: 'off', required: true
+    = f.submit t('defaults.submit')

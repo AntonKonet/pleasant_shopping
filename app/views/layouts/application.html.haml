@@ -8,10 +8,11 @@
     .header
       .right_panel
         .cart
-          = link_to t('defaults.cart'), '#'
+          = render partial: 'shared/cart_link'
+        - if User.current_user.blank?
+          .button
+            = link_to t('defaults.sign_up'), new_invitation_path
         .button
-          = link_to t('defaults.sign_up'), new_invitation_path
-        .button
-          = link_to t('defaults.log_out'), '#'
+          = login_logout_link
     .container
       = yield

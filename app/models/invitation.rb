@@ -5,7 +5,7 @@ class Invitation < ActiveRecord::Base
 
   belongs_to :user
 
-  after_initialize :generate_key
+  before_create :generate_key
   after_create :send_invite_email
 
   def build_url
