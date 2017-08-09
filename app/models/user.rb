@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
   has_one :invitation
+  has_many :orders
 
   before_save :encrypt_password
   before_create :generate_auth_token
